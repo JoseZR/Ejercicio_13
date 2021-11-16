@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Document</title>
+
+    <link type = "text / css" rel = "hoja de estilo" href = "css / lightslider.css" />                      
+<script src = "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" > </script> 
+<script src = "js / lightslider.js" > </script> 
+
+</head>
+<body>
+
+    
+<div class="padre">
+    <div class="formulario">
+        <h1>Peliculas</h1>
+        <form id="formulario">
+            <label>Nombre : </label>
+        <input type="text" name="pelicula" onchange="agregarNombre(this)">
+        <br>
+        <label>Año : </label>
+        <input type="number" name="año" onchange="agregarAno(this)">
+        <br>
+        <label>Genero : </label>
+        <select name="generos" id="generos" onchange="agregarGenero(this);">
+            <option value="-----">---------------------------------</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Accion">Accion</option>
+            <option value="Terror">Terror</option>
+            <option value="Romance">Romance</option>
+        </select>
+        <br><br>
+        <label> - - - - - - - - - - - Reparto - - - - - - - - - - - </label>
+            <br><br><label>Actor 1 : </label><input type="text" name="año" onchange="agregarActorUno(this)">
+                <br><label>Actor 2 : </label><input type="text" name="año" onchange="agregarActorDos(this)">
+                    <br><label>Actor 3 : </label><input type="text" name="año" onchange="agregarActorTres(this)">
+        <br>
+        <label>Sinopsis</label>
+        <input type="text" name="sinopsis" onchange="agregarSinopsis(this)">
+        <br><br>
+        </form>
+        
+        <button onclick="guardar();">Guardar</button>
+    </div>
+</div>
+<div class="padre">
+    <div class="tabla">
+        <h2>Resultados</h2>
+        <br><br>
+        <button onclick="mostrar();">Mostrar</button>
+        <button onclick="actualizar();">Actualizar</button>
+        <button onclick="eliminar();">Eliminar</button>
+        <br><br>
+        <label>Identificador:</label>
+        <input type="number" name="identificador" id="identificador">
+        <button id="buscar" type="submit">Buscar</button>
+        <div class="subtabla">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Año</th>
+                    <th>Genero</th>
+                    <th>Reparto</th>
+                    <th>Sinopsis</th>
+                </tr>  
+            </table>
+            <table id="resultados"></table>
+            <table id="resultado2"></table>
+        </div>     
+    </div>
+</div> 
+
+
+<script src="codigo.js"></script>
+</body>
+</html>
